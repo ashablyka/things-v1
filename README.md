@@ -11,3 +11,7 @@ And then run the app:
 ```console
 npm start
 ```
+
+## Deploy
+
+https://glacial-plateau-04273.herokuapp.com/api/v1/things
