@@ -13,7 +13,7 @@ router.get('/things', (req, res) => {
 });
 
 router.get('/things/:id', (req, res) => {
-  thingsControllers.getThing(Number(req.params.id))
+  thingsControllers.getThing(req.params.id)
     .then((thing) => {
       if (thing) {
         res.json(thing);
@@ -38,7 +38,7 @@ router.post('/things', (req, res) => {
 });
 
 router.delete('/things/:id', (req, res) => {
-  thingsControllers.deleteThing(Number(req.params.id))
+  thingsControllers.deleteThing(req.params.id)
     .then((thing) => {
       if (thing) {
         res.end('Deleted!');
@@ -54,7 +54,7 @@ router.delete('/things/:id', (req, res) => {
 });
 
 router.put('/things/:id', (req, res) => {
-  thingsControllers.updateThing(Number(req.params.id), req.body)
+  thingsControllers.updateThing(req.params.id, req.body)
     .then(() => res.end('Updated!'))
     .catch(() => {
       res.status(500);
