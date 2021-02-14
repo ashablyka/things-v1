@@ -24,7 +24,7 @@ function saveThings(things) {
 function saveThing(thing) {
   return getThings()
     .then((things) => {
-      const id = String(Number(things[things.length - 1].id) + 1);
+      const id = things.length ? String(Number(things[things.length - 1].id) + 1) : '1';
       const thingWithId = { ...thing, id };
 
       return saveThings(things.concat(thingWithId));
